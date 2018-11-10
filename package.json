@@ -1,6 +1,20 @@
 {
   "name": "vectography",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "A library that turns bitmaps into approximated vector graphics in different styles.",
+  "keywords": [
+    "convert",
+    "svg",
+    "webp",
+    "png",
+    "jpg",
+    "gif",
+    "bmp",
+    "bitmap to vector",
+    "vectorization",
+    "vector graphic",
+    "image processing"
+  ],
   "main": "dist/vectography.cjs.js",
   "module": "dist/vectography.esm.js",
   "browser": "dist/vectography.umd.js",
