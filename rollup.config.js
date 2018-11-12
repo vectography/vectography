@@ -8,30 +8,20 @@ import pkg from './package.json';
 
 export default [
   {
-    entry: 'src/main.js',
-    dest: pkg.browser,
-    format: 'umd',
-    moduleName: 'howLongUntilLunch',
+    input: 'src/main.js',
+    output: { name: 'vectography', file: pkg.browser, format: 'umd' },
     plugins: [
       resolve(),
       commonjs(),
-      babel({
-        exclude: ['node_modules/**']
-      })
+      babel({ exclude: ['node_modules/**'], runtimeHelpers: true })
     ]
   },
-
   {
-    entry: 'src/main.js',
-    external: ['ms'],
-    targets: [
-      { dest: pkg.main, format: 'cjs' },
-      { dest: pkg.module, format: 'es' }
+    input: 'src/main.js',
+    output: [
+      { file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: 'es' }
     ],
-    plugins: [
-      babel({
-        exclude: ['node_modules/**']
-      })
-    ]
+    plugins: [babel({ exclude: ['node_modules/**'], runtimeHelpers: true })]
   }
 ];
